@@ -23,7 +23,6 @@ for line in file:
 
 file.close()
 
-#Napisi print
-print(f"Prosječni broj ham: {average(ham_words, ham_counter)}")
-print(f"Prosječni broj spam: {average(spam_words, spam_counter)}")
+print(f"Prosječni broj ham: {average(ham_words, ham_counter):.2f}")
+print(f"Prosječni broj spam: {average(spam_words, spam_counter):.2f}")
 print(f"Broj spam poruka koje zavrsavaju s !: {exclamation_counter}")
