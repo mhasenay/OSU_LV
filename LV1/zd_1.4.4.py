@@ -1,6 +1,6 @@
 word_count = {}
 
-fhand = open("LV1/song.txt", "r")
+fhand = open("LV1/song.txt")
 
 for line in fhand:
     words = line.split()

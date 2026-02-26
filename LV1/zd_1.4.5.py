@@ -1,3 +1,7 @@
+def average(word_count, message_number):
+    return float(word_count/message_number)
+    
+
 ham_words = 0
 ham_counter = 0
 spam_words = 0
@@ -12,13 +16,14 @@ for line in file:
         ham_counter += 1
         ham_words += len(line.split())-1
     elif line.startswith("spam"):
-        #isto kao za ham, popravi:
-        spam_counter =0
+        spam_counter += 1
+        spam_words += len(line.split())-1
         if line.endswith("!"):
-            #ovo popravi
-            exclamation_counter = 0
+            exclamation_counter += 1
 
 file.close()
 
 #Napisi print
-#Napisi funkciju za racunanje averagea
+print(f"Prosječni broj ham: {average(ham_words, ham_counter)}")
+print(f"Prosječni broj spam: {average(spam_words, spam_counter)}")
+print(f"Broj spam poruka koje zavrsavaju s !: {exclamation_counter}")

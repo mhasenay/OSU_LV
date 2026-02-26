@@ -11,7 +11,7 @@ def calculate_average(numbers):
 
 numbers = []
 while True:
-    print("Ako želite završiti napišite Done")
+    print("Ako želite završiti napišite: Done")
     value = input("Unesite broj: ")
     if value.lower() == "done":
         break
