@@ -1,4 +1,4 @@
-def average(word_count, message_number):
+def calculate_average(word_count, message_number):
     return float(word_count/message_number)
     
 
@@ -23,6 +23,6 @@ for line in file:
 
 file.close()
 
-print(f"Prosječni broj ham: {average(ham_words, ham_counter):.2f}")
-print(f"Prosječni broj spam: {average(spam_words, spam_counter):.2f}")
+print(f"Prosječni broj ham: {calculate_average(ham_words, ham_counter):.2f}")
+print(f"Prosječni broj spam: {calculate_average(spam_words, spam_counter):.2f}")
 print(f"Broj spam poruka koje zavrsavaju s !: {exclamation_counter}")
