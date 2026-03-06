@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.array([1, 2, 3, 3, 1])
-y = np.array([1, 2, 2, 1, 1])
+x = np.array([1, 2, 3, 3, 2, 1])
+y = np.array([1, 2, 2, 1, 0, 1])
 plt.plot(x, y, color = 'y', 
          linewidth = 1, marker = "*", markersize = 10)
 

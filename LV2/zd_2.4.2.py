@@ -13,9 +13,11 @@ masa = data[:,2]
 
 plt.figure(1)
 plt.scatter(visina, masa, s = 5, c='purple')
+plt.axhline(y=70, color = 'red', linestyle = "--")
 plt.title('Odnos visine i mase')
 plt.xlabel('Visina (cm)')
 plt.ylabel('Masa (kg)')
+plt.show()
 
 plt.figure(2)
 plt.scatter(visina[::50], masa[::50], c='orange')

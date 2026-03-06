@@ -5,11 +5,15 @@ img = plt.imread("LV2/road.jpg")
 img = img[:, :, 0].copy()
 
 #a) posvijetli sliku
-brigter_img = img+50
-brigter_img = np.clip(brigter_img, 0, 255)
+brightness = 50
+brighter_img = np.clip(img.astype(np.uint16)+brightness, 0, 255).astype(np.uint8)
+#brighter_img[brighter_img > 255] = 255
+#brighter_img = brighter_img.astype(np.uint16)
+#brighter_img = np.clip(brighter_img, 0, 255)
+#brighter_img = brighter_img.astype(np.uint8)
 plt.title('a) Posvijetli sliku')
 plt.axis('off')
-plt.imshow(brigter_img, cmap="gray")
+plt.imshow(brighter_img, cmap="gray")
 plt.show()
 
 #b)prikazati samo drugu četvrtinu slike po širini
