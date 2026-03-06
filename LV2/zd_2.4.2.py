@@ -12,13 +12,13 @@ visina = data[:,1]
 masa = data[:,2]
 
 plt.figure(1)
-plt.scatter(visina, masa, alpha = 0.5, s = 10)
+plt.scatter(visina, masa, s = 5, c='purple')
 plt.title('Odnos visine i mase')
 plt.xlabel('Visina (cm)')
 plt.ylabel('Masa (kg)')
 
 plt.figure(2)
-plt.scatter(visina[::50], masa[::50], c='green')
+plt.scatter(visina[::50], masa[::50], c='orange')
 plt.title('Odnos visine i mase svake 50. osobe')
 plt.xlabel('Visina (cm)')
 plt.ylabel('Masa (kg)')
@@ -41,4 +41,6 @@ print("Muškarci - min:", muskarci_visine.min())
 print("Muškarci - max:", muskarci_visine.max())
 print("Muškarci - mean:", muskarci_visine.mean())
 
-#Napravit printove za zene isto kao za muske
+print("Žene - min:", zene_visine.min())
+print("Žene - max:", zene_visine.max())
+print("Žene - mean:", zene_visine.mean())
