@@ -9,7 +9,7 @@ a) Pomocu histograma prikažite emisiju C02 plinova. Komentirajte dobiveni prika
 '''
 def a_zd():
     plt.figure()
-    data['CO2 Emissions (g/km)'].plot(kind='hist', bins=20, color = 'yellow', edgecolor = 'black')
+    data['CO2 Emissions (g/km)'].plot(kind='hist', bins=20, color = 'green', edgecolor = 'blue')
     plt.title('Emisija C02 plinova')
     plt.show()
 
@@ -21,7 +21,7 @@ C02 plinova. Komentirajte dobiveni prikaz. Kako biste bolje razumjeli odnose izm
 velicina, obojite tockice na dijagramu raspršenja s obzirom na tip goriva.
 '''
 def b_zd():
-    data.plot.scatter(x = 'Fuel Consumption City (L/100km)', y = 'CO2 Emissions (g/km)', c = 'Fuel Type', colormap = 'coolwarm')
+    data.plot.scatter(x = 'Fuel Consumption City (L/100km)', y = 'CO2 Emissions (g/km)', c = 'Fuel Type', cmap = 'coolwarm')
     plt.title('Odnos gradske potrošnje goriva i emisije C02 plinova')
     plt.xlabel('Gradska potrošnja goriva (L/100km)')
     plt.ylabel('Emisija C02 plinova (g/km)')
@@ -49,7 +49,7 @@ groupby.
 '''
 def d_zd():
     fuel_grouped = data.groupby('Fuel Type').size()
-    fuel_grouped.plot(kind='bar', xlabel = 'Fuel Type', ylabel = 'Number of vehicles', color = 'cyan', edgecolor = 'black')
+    fuel_grouped.plot(kind='bar', xlabel = 'Fuel Type', ylabel = 'Number of vehicles', color = 'green', edgecolor = 'blue')
     plt.show()
 
 #d_zd()
@@ -60,7 +60,7 @@ s obzirom na broj cilindara.
 '''
 def e_zd():
     cylinders_grouped = data.groupby('Cylinders')['CO2 Emissions (g/km)'].mean()
-    cylinders_grouped.plot(kind='bar', xlabel = 'Number of Cylinders', ylabel = 'Average CO2 Emissions (g/km)', color = 'magenta', edgecolor = 'black')
+    cylinders_grouped.plot(kind='bar', xlabel = 'Number of Cylinders', ylabel = 'Average CO2 Emissions (g/km)', color = 'green', edgecolor = 'blue')
     plt.show()
 
 #e_zd()
