@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import ConfusionMatrixDisplay, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 
 labels= {0:'Adelie', 1:'Chinstrap', 2:'Gentoo'}
@@ -35,7 +37,7 @@ def plot_decision_regions(X, y, classifier, resolution=0.02):
                     label=labels[cl])
 
 # ucitaj podatke
-df = pd.read_csv("penguins.csv")
+df = pd.read_csv("LV5/penguins.csv")
 
 # izostale vrijednosti po stupcima
 print(df.isnull().sum())
@@ -66,3 +68,55 @@ y = df[output_variable].to_numpy()
 # podjela train/test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 123)
 
+#a) stupcasti dijagram
+
+classes, train_counts = np.unique(y_train, return_counts=True)
+classes, test_counts = np.unique(y_test, return_counts=True)
+plt.figure()
+x_axis = np.arange(len(classes))
+plt.bar(x_axis-0.2, train_counts, 0.4)
+plt.bar(x_axis+0.2, test_counts, 0.4)
+plt.show()
+
+#b) 
+LogRegression_model = LogisticRegression(max_iter=130)
+LogRegression_model.fit( X_train , y_train )
+
+#c)
+param1 = LogRegression_model.intercept_
+param2, param3 = LogRegression_model.coef_.T
+print(param1)
+print(param2)
+print(param3)
+
+#d)
+plot_decision_regions(X_train, y_train.ravel(), LogRegression_model)
+plt.show()
+
+#e)
+y_test_p = LogRegression_model.predict( X_test )
+
+disp = ConfusionMatrixDisplay( confusion_matrix(y_test , y_test_p ))
+disp.plot(cmap = 'PuRd')
+plt.show()
+print(classification_report(y_test , y_test_p))
+
+#f)
+input_variables = ['bill_length_mm',
+                    'flipper_length_mm',
+                    'bill_depth_mm',
+                    'body_mass_g']
+
+X = df[input_variables].to_numpy()
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 123)
+
+LogRegression_model = LogisticRegression(max_iter=130)
+LogRegression_model.fit( X_train , y_train )
+
+y_test_p = LogRegression_model.predict( X_test )
+
+disp = ConfusionMatrixDisplay( confusion_matrix(y_test , y_test_p ))
+disp.plot(cmap = 'PuRd')
+plt.show()
+print(classification_report(y_test , y_test_p))
