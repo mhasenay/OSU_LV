@@ -39,7 +39,7 @@ def generate_data(n_samples, flagc):
     return X
 
 # generiranje podatkovnih primjera
-X = generate_data(500, 4)
+X = generate_data(500, 5)
 km = KMeans(n_clusters=3, init ="k-means++", n_init =5 , random_state =0 )
 km.fit(X)
 labels = km.predict(X)

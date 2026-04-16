@@ -4,7 +4,7 @@ import matplotlib.image as Image
 from sklearn.cluster import KMeans
 from sklearn import metrics
 from scipy.spatial.distance import cdist
-'''
+
 # ucitaj sliku
 img = Image.imread("LV7/imgs/test_1.jpg")
 
@@ -82,7 +82,7 @@ plt.xlabel('Number of Clusters (k)')
 plt.ylabel('Distortion')
 plt.title('The Elbow Method using Distortion')
 plt.show()
-'''
+
 
 '''
 # ucitaj sliku
@@ -201,7 +201,7 @@ img_aprox = np.reshape(img_array_aprox, (w, h, d))
 #     binary_img = cluster_mask.reshape(w, h)
     
 #     plt.figure()
-#     plt.title(f"Klaster {i}")
+#     plt.title(f"Cluster {i}")
 #     plt.imshow(binary_img, cmap='gray')
 #     plt.axis('off')
 #     plt.show()
@@ -356,7 +356,7 @@ img_aprox = np.reshape(img_array_aprox, (w, h, d))
 #     binary_img = cluster_mask.reshape(w, h)
     
 #     plt.figure()
-#     plt.title(f"Klaster {i}")
+#     plt.title(f"Cluster {i}")
 #     plt.imshow(binary_img, cmap='gray')
 #     plt.axis('off')
 #     plt.show()
@@ -434,7 +434,7 @@ img_aprox = np.reshape(img_array_aprox, (w, h, d))
 #     binary_img = cluster_mask.reshape(w, h)
     
 #     plt.figure()
-#     plt.title(f"Klaster {i}")
+#     plt.title(f"Cluster {i}")
 #     plt.imshow(binary_img, cmap='gray')
 #     plt.axis('off')
 #     plt.show()
