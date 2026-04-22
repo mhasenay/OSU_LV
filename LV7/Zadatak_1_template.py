@@ -39,17 +39,15 @@ def generate_data(n_samples, flagc):
     return X
 
 # generiranje podatkovnih primjera
-X = generate_data(500, 1)
-km = KMeans(n_clusters=3, init ="random", n_init =5 , random_state =0 )
+X = generate_data(500, 5)
+km = KMeans(n_clusters=3, init ="k-means++", n_init =5 , random_state =0 )
 km.fit(X)
 labels = km.predict(X)
 
 centers = km.cluster_centers_
+
 # prikazi primjere u obliku dijagrama rasprsenja
 plt.figure()
 plt.scatter(X[:,0],X[:,1], cmap='plasma', c=labels)
 plt.scatter(centers[:, 0], centers[:, 1], c='black', alpha=1, marker='X')
-plt.xlabel('$x_1$')
-plt.ylabel('$x_2$')
-plt.title('podatkovni primjeri')
 plt.show()
