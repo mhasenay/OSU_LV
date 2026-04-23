@@ -65,7 +65,7 @@ model.compile(loss="categorical_crossentropy",
 
 # TODO: provedi ucenje mreze
 batch_size=32
-epoch = 20
+epoch = 30
 history = model.fit(x_train_s,
                     y_train_s,
                     batch_size = batch_size,
@@ -95,6 +95,5 @@ plt.ylabel("True")
 plt.colorbar()
 plt.show()
 
-
 # TODO: spremi model
-model.save("models\mnist_model.keras")
+model.save("LV8/mnist_model.keras")

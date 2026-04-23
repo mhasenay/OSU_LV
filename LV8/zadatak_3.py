@@ -2,9 +2,9 @@ import numpy as np
 from tensorflow import keras
 from PIL import Image
 
-model = keras.models.load_model("models/mnist_model.keras")
+model = keras.models.load_model("LV8/mnist_model.keras")
 
-img = Image.open("test.png")
+img = Image.open("LV8/test_2.png")
 
 img = img.convert("L") #stavlja u grayscale
 
@@ -18,7 +18,6 @@ img_array = img_array / 255
 img_array = np.expand_dims(img_array, axis=(0, -1))
 
 #Klasifikicija
-
 predictions = model.predict(img_array)
 predicted_class = np.argmax(predictions)
 confidence = predictions[0][predicted_class] * 100 # ??
